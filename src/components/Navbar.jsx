@@ -5,7 +5,7 @@ function Navbar() {
 
     return (
         <>
-            <nav className="navbar">
+            <nav className="navbar flex">
                 <div className="container-fluid" style={{padding: '0 100px'}}>
                     <a className="navbar-brand navbar-nav"><img src={Logo} alt="" style={{ height: '40px' }} /></a>
                     <div className='d-flex flex-row align-items-center' style={{gap: '35px'}}>
