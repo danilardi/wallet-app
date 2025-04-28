@@ -1,41 +1,121 @@
-*, h1, h2, h3, h4, h5, p {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+@import "tailwindcss";
+
+@plugin "daisyui" {
+  themes: false;
 }
 
-.text-400 {
+@theme {
+  --color-primary: #0061FF;
+  --color-gray: #A3A0A0;
+  --color-secondary-text: #737373;
+  --text-12: 12px;
+  --text-14: 14px;
+  --text-16: 16px;
+  --text-18: 18px;
+  --text-20: 20px;
+  --text-24: 24px;
+  --text-32: 32px;
+  --text-36: 36px;
+  --text-35: 35px;
+  --text-38: 38px;
+  --text-40: 40px;
+  --text-48: 48px;
+  --text-56: 56px;
+  --text-60: 60px;
+  --text-64: 64px;
+}
+
+.sans-400 {
   font-family: "Open Sans", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
   font-variation-settings:
-    "wdth" 100;
+    "wdth"100;
 }
 
-.text-500 {
+.sans-500 {
   font-family: "Open Sans", sans-serif;
   font-optical-sizing: auto;
   font-weight: 500;
   font-style: normal;
   font-variation-settings:
-    "wdth" 100;
+    "wdth"100;
 }
 
-.text-600 {
+.sans-600 {
   font-family: "Open Sans", sans-serif;
   font-optical-sizing: auto;
   font-weight: 600;
   font-style: normal;
   font-variation-settings:
-    "wdth" 100;
+    "wdth"100;
 }
 
-.text-700 {
+.sans-700 {
   font-family: "Open Sans", sans-serif;
   font-optical-sizing: auto;
   font-weight: 700;
   font-style: normal;
   font-variation-settings:
-    "wdth" 100;
+    "wdth"100;
+}
+
+
+.montserrat-400 {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.montserrat-500 {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.montserrat-600 {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.montserrat-700 {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.btn {
+  @apply drop-shadow-[0_0_10px_rgba(25,145,143,1)] rounded-[10px] border-0 min-w-10 min-h-10;
+}
+
+.input {
+  @apply bg-white drop-shadow-[0_0_10px_rgba(91,91,91,0.2)] rounded-[10px] min-h-[50px] gap-2.5 px-[25px]
+}
+
+.dropdown-btn {
+  @apply btn bg-white drop-shadow-[0_0_10px_rgba(91,91,91,0.2)] rounded-[10px] min-h-[50px] px-[16px] border-0 text-secondary-text
+}
+
+.dropdown-btn {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.pagination {
+  @apply join 
+}
+.pagination-btn {
+  @apply btn border border-[#E9E9E9] bg-white bg-none text-primary
+}
+
+.pagination-btn:disabled {
+  @apply text-secondary-text !bg-[#F3F3F3]
 }

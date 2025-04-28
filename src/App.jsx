@@ -1,16 +1,28 @@
-import Home from './pages/Home'
-import Navbar from "./components/Navbar"
+import Home from './pages/Home';
+import Navbar from './components/Navbar';
+import Transfer from './pages/Transfer';
+import { RouteProvider, useRoute } from './contexts/RouteContext';
 
-function App() {
-  
+function Pages() {
+  const { route } = useRoute();
+
   return (
     <>
-      <div className='d-flex flex-column min-vh-100'>
-        <Navbar />
-        <Home />
-      </div>
+      {route === 'home' && <Home />}
+      {route === 'transfer' && <Transfer />}
     </>
-  )
+  );
 }
 
-export default App
+function App() {
+  return (
+    <RouteProvider>
+      <div className="flex flex-col min-h-screen">
+        <Navbar />
+        <Pages />
+      </div>
+    </RouteProvider>
+  );
+}
+
+export default App;

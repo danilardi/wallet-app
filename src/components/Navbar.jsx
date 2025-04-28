@@ -1,31 +1,35 @@
 import Logo from '../assets/images/logo.png'
 import IcDarkMode from '../assets/icons/ic-dark-mode.png'
+import { useRoute } from '../contexts/RouteContext';
 
 function Navbar() {
+    const { route, setRoute } = useRoute();
 
     return (
         <>
-            <nav className="navbar flex">
-                <div className="container-fluid" style={{padding: '0 100px'}}>
-                    <a className="navbar-brand navbar-nav"><img src={Logo} alt="" style={{ height: '40px' }} /></a>
-                    <div className='d-flex flex-row align-items-center' style={{gap: '35px'}}>
-                        <ul className="navbar-nav flex-row mb-2 mb-lg-0" style={{ gap: "70px" }}>
-                            <li className="nav-item">
-                                <a className="nav-link active" aria-current="page" href="#">Dashboard</a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link" href="#">Transfer</a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link" href="#">Topup</a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link" href="#">Sign Out</a>
-                            </li>
+            <nav className="navbar bg-base-100 shadow-sm">
+                <div className="container mx-auto flex justify-between items-center px-24 py-4">
+                    {/* Logo */}
+                    <a className="flex items-center gap-2">
+                        <img src={Logo} alt="Logo" className="h-10" />
+                    </a>
+
+                    {/* Menu + Darkmode */}
+                    <div className="flex items-center gap-9">
+                        {/* Menu */}
+                        <ul className="flex gap-16 text-16 font-medium cursor-pointer sans-400">
+                            <li><a className={`hover:text-primary ${route == 'home' && 'text-primary sans-700'}`} onClick={() => setRoute('home')}>Dashboard</a></li>
+                            <li><a className={`hover:text-primary ${route == 'transfer' && 'text-primary sans-700'}`} onClick={() => setRoute('transfer')}>Transfer</a></li>
+                            <li><a className={`hover:text-primary`} href="#">Topup</a></li>
+                            <li><a className={`hover:text-primary`} href="#">Sign Out</a></li>
                         </ul>
-                        <div style={{ width: '1px', height: '40px', backgroundColor: "#B3B3B3"}}></div>
+
+                        {/* Divider */}
+                        <div className="h-10 w-px bg-gray-300"></div>
+
+                        {/* Darkmode Toggle */}
                         <div>
-                            <img src={IcDarkMode} />
+                            <img src={IcDarkMode} alt="Dark Mode" className="h-6 cursor-pointer" />
                         </div>
                     </div>
                 </div>
