@@ -1,8 +1,10 @@
 import Logo from '../assets/images/logo.png'
 import IcDarkMode from '../assets/icons/ic-dark-mode.png'
 import { useRoute } from '../contexts/RouteContext';
+import { useAuth } from '../contexts/AuthContext';
 
 function Navbar() {
+    const { logout } = useAuth();
     const { route, setRoute } = useRoute();
 
     return (
@@ -21,7 +23,9 @@ function Navbar() {
                             <li><a className={`hover:text-primary ${route == 'home' && 'text-primary sans-700'}`} onClick={() => setRoute('home')}>Dashboard</a></li>
                             <li><a className={`hover:text-primary ${route == 'transfer' && 'text-primary sans-700'}`} onClick={() => setRoute('transfer')}>Transfer</a></li>
                             <li><a className={`hover:text-primary`} href="#">Topup</a></li>
-                            <li><a className={`hover:text-primary`} href="#">Sign Out</a></li>
+                            <li><a className={`hover:text-primary`} onClick={() => {
+                                logout()
+                            }}>Sign Out</a></li>
                         </ul>
 
                         {/* Divider */}

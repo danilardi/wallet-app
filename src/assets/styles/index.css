@@ -8,6 +8,9 @@
   --color-primary: #0061FF;
   --color-gray: #A3A0A0;
   --color-secondary-text: #737373;
+  --color-success: #219653;
+  --color-error: #EB5757;
+  --color-base-100: #FFFFFF;
   --text-12: 12px;
   --text-14: 14px;
   --text-16: 16px;
@@ -98,6 +101,26 @@
   @apply bg-white drop-shadow-[0_0_10px_rgba(91,91,91,0.2)] rounded-[10px] min-h-[50px] gap-2.5 px-[25px]
 }
 
+.input {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.input-clear {
+  @apply input bg-[#FAFBFD] rounded-[10px] min-h-15 
+}
+
+.input-clear {
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-variation-settings:
+    "wdth"100;
+}
+
 .dropdown-btn {
   @apply btn bg-white drop-shadow-[0_0_10px_rgba(91,91,91,0.2)] rounded-[10px] min-h-[50px] px-[16px] border-0 text-secondary-text
 }
@@ -108,6 +131,7 @@
   font-weight: 400;
   font-style: normal;
 }
+
 
 .pagination {
   @apply join 

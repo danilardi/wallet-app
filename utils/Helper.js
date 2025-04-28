@@ -13,3 +13,26 @@ export const formatDate = (dateString) => {
 
     return `${hours}:${minutes} - ${day} ${month} ${year}`;
 }
+
+// change "-75000" to "- Rp75.000,00"
+export const formatCurrency = (amount) => {
+    const formattedAmount = Math.abs(amount).toLocaleString('id-ID', {
+        style: 'currency',
+        currency: 'IDR',
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+    });
+
+    return amount < 0 ? `- ${formattedAmount}` : `+ ${formattedAmount}`;
+}
+
+export const formatCurrency2 = (amount) => {
+    const formattedAmount = Math.abs(amount).toLocaleString('id-ID', {
+        style: 'currency',
+        currency: 'IDR',
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+    });
+
+    return amount < 0 ? `- ${formattedAmount}` : `${formattedAmount}`;
+}
